@@ -1,49 +1,33 @@
 'use strict'
 
 const User = require('./src/models/user.model');
+const bcrypt = require('bcrypt');
+const {generateJWT} = require('./src/helpers/create-jwt');
 
-
-
-const createUser = async () => {
-try {
-    const user = new User({
-        name: 'Andersson',
-        lastname: 'Urrea',
-        email: 'aurrea-2019284@kinal.edu.gt',
-        password: 'ander123',
-        rol: 'ADMIN',
-    });
-    let usuario = await Usuarios.findOne({email}) //
-    if(!usuario){
-        return res.status(400).send({
-            
-        })
-    }
-    await user.save();
-    console.log('User created successfully');
-} catch (error) {
-    console.error(error);
-}
-};
-
-/*const createUser = async () => {
-    const user = new User({
-        name: 'Andersson',
-        lastname: 'Urrea',
-        email: 'aurrea-2019284@kinal.edu.gt',
-        password: 'ander123',
-        rol: 'ADMIN',
-    });
+const defaultUser = async () => {
     try{
-        let usuario = await Usuarios.findOne({email})
-        if(!usuario){
-            return res.status(400).send({
-                message: 'Ya esta creado el default', 
-                ok: false,
-                usuario: usuario
-            })
-        }
-    }
-}*/
+        const user = new User();
+        user.name = 'Andersson';
+        user.lastname = 'Urrea';
+        user.email ='aurrea-2019284@kinal.edu.gt';
+        user.password = 'ander123';
+        user.rol = 'ADMIN';
 
-module.exports = {createUser};
+        const userEncontrado = await User.findOne({email: user.email});
+        if(userEncontrado) return console.log('El ADMIN esta listo');
+
+        // Encriptar la contrasenia 
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync());
+        
+        // Guardar Usuario
+        user = await user.save();
+
+        if(!user) return console.log('El administrador no esta listo'); 
+        return console.log('El administrador esta listo');
+
+    }catch (err) {
+        console.log(err);
+    }
+}
+
+module.exports = {defaultUser};

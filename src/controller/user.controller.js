@@ -24,6 +24,13 @@ const createUser = async(req, res) => {
         // Guardar usuarios
         usuario = await usuario.save();
 
+        //Crear token
+        const token = await generateJWT(usuario.id, usuario.username, usuario.email);
+        res.status(200).send({
+        message: `Usuario ${usuario.username} creado correctamente`,
+        usuario,
+        token: token,
+        });
 
         res.status(200).send({
             message: `Usuario ${name} creado correctamente`, 

@@ -7,7 +7,7 @@ require('dotenv').config();
 const port = process.env.PORT;
 const routesU = require('./src/routes/user.routes');
 const User = require('./src/models/user.model');
-const {createUser} = require("./default")
+const {defaultUser} = require("./default")
 
 connection();
 
@@ -21,4 +21,4 @@ app.listen(port, ()=> {
     console.log(`Servidor corriendo en el puerto ${port}`);
 })
 
-createUser();
+defaultUser();
