@@ -11,5 +11,5 @@ const api = Router();
 api.post('/create-user', createUser);
 api.post('/login', loginUser)
 api.put('/edit-user/:id', validateJWT, editUser);
-api.delete('/delete-client', validateJWT, deleteUser)
+api.delete('/delete-client/:id', validateJWT, deleteUser)
 module.exports = api;
