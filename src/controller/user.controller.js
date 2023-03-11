@@ -74,7 +74,7 @@ const loginUser = async(req, res) => {
 }
 
 const editUser = async(req, res) => {
-    if(req.user.rol === 'CLIENT'){
+    if(req.user.rol === 'ADMIN'){
         try{
             const id = req.params.id;
             const userEdit = {...req.body};
@@ -82,10 +82,6 @@ const editUser = async(req, res) => {
             userEdit.password = userEdit.password
             ? bcrypt.hashSync(userEdit.password, bcrypt.genSaltSync())
             : userEdit.password;
-    
-            if(id !== req.user.id){
-                return res.status(401).send({message: 'No tienes permiso para editar este perfil'})
-            }
     
             const userComplete = await Usuarios.findByIdAndUpdate(id, userEdit, {new: true,});
     
@@ -103,7 +99,7 @@ const editUser = async(req, res) => {
             throw new Error(err);
         }
     }else{
-        return res.status(200).send({message: 'Eres ADMIN, solo los clientes pueden editar perfil'})
+        return res.status(200).send({message: 'No tienes permiso para hacer esta accion'})
     }
 }
 

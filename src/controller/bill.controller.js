@@ -5,48 +5,44 @@ const Usuarios = require('../models/user.model');
 const Product = require('../models/product.model');
 const Bill = require('../models/bill.model');
 const pdfkit = require('pdfkit');
-const fs = require('fs');
 
-const addToCart = async (req, res) => {
-    try {
-      const cartItems = req.body; // Array de objetos con productId y quantity
+const addToCart = async(req, res) => {
+    try{
+        
+        const {productId, quantity} = req.body;
+        const userId = req.user.id;
 
-    const userId = req.user.id;
+         // Buscar el producto en la base de datos
+    const product = await Product.findById(productId);
 
-    const user = await Usuarios.findById(userId);
-    
-    for (const item of cartItems) {
-        const { productId, quantity } = item;
-
-        const product = await Product.findById(productId);
-
-        if (!product) {
-        return res.status(404).json({ message: 'Producto no encontrado' });
-        }
-
-        if (product.stock < quantity) {
-        return res.status(400).json({ message: 'Stock insuficiente' });
-        }
-
-         // Agregar el producto al carrito del usuario
-        const updatedUser = await Usuarios.findByIdAndUpdate(
-        userId,
-        { $push: { carrito: { nombre: productId, cantidad: quantity } } },
-        { new: true }
-        ).populate('carrito.nombre');
-
-        product.stock -= quantity;
-
-        await product.save();
+    // Si el producto no existe, enviar una respuesta de error
+    if (!product) {
+    return res.status(404).json({ message: 'Producto no encontrado' });
     }
 
-        res.status(200).json(user);
+    // Verificar si hay suficiente stock disponible para el producto
+    if (product.stock < quantity) {
+    return res.status(400).json({ message: 'Stock insuficiente' });
+    }
 
+    // Agregar el producto al carrito del usuario
+    const user = await Usuarios.findByIdAndUpdate(
+    userId,
+    { $push: { carrito: { nombre: productId, cantidad: quantity } } },
+    { new: true }
+    ).populate('carrito.nombre');
+
+    // Actualizar el stock del producto en la base de datos
+    product.stock -= quantity;
+    await product.save();
+
+    // Enviar una respuesta exitosa con el usuario actualizado
     res.status(200).json(user);
-    } catch (error) {
+
+} catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error del servidor' });
-    }
+}
 };
 
 const listCart = async (req, res) => {
