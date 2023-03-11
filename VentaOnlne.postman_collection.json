@@ -1,0 +1,826 @@
+{
+	"info": {
+		"_postman_id": "54d25f75-5d11-42c0-b185-fcf34c46bd76",
+		"name": "VentaOnlne",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USUARIO",
+			"item": [
+				{
+					"name": "REGISTRAR CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Cesar",
+									"type": "default"
+								},
+								{
+									"key": "lastname",
+									"value": "Castro",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "Cesar11@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Cesar1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/create-user",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INICIAR SESION",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBhZDQ0MDA2NmUwNjlhYjBkZGJhOTEiLCJ1c2VybmFtZSI6IkphcmVkIEFsZXhhbmRlciIsImVtYWlsIjoiSmFyZWRAZ21haWwuY29tIiwiaWF0IjoxNjc4NDg2NjAxLCJleHAiOjE2Nzg0OTAyMDF9.vYjR8gsrNCGiM0OSW636Izk9A9D9H8jGCthbIpdre8M",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Denin@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "denin1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR CLIENTE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBjMTUyOWNhYTRlZTI4ODA2NGM3NDkiLCJ1c2VybmFtZSI6IkNlc2FyIiwiZW1haWwiOiJDZXNhcjExQGdtYWlsLmNvbSIsImlhdCI6MTY3ODUxMzY5MywiZXhwIjoxNjc4NTE3MjkzfQ.paHPYU15PqtshdLGJemIIqeywLotXflV_qsTfq0TDfA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Juanito Gustavo",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "Juan12",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/edit-user/640c1529caa4ee288064c749",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"edit-user",
+								"640c1529caa4ee288064c749"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CLIENTE",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NTEzMzMxLCJleHAiOjE2Nzg1MTY5MzF9._1uRKRiF5m4Fva4rQcE6eat6kvgsT5Odk1M7L1fgTFY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3005/api/delete-client",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"delete-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGREGAR CARRITO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "640a63a4788aa1e92f2ded78",
+									"type": "default"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/addCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"addCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CARRITO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3005/api/listCart",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"listCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COMPRAR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/api/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CANCELAR COMPRA",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBhZDQ0MDA2NmUwNjlhYjBkZGJhOTEiLCJ1c2VybmFtZSI6IkphcmVkIEFsZXhhbmRlciIsImVtYWlsIjoiSmFyZWRAZ21haWwuY29tIiwiaWF0IjoxNjc4NDcyODAyLCJleHAiOjE2Nzg0NzY0MDJ9.wCo5DASR9RusP3ZNMebmAk2GZBGL941dy49NZJdVMYw",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/api/cancelCart/640aed2214f6fb6d717b998d",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"cancelCart",
+								"640aed2214f6fb6d717b998d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "COMPRAS POR USUARIO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/api/readShop",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"readShop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VISUALIZAR PRODUCTOS POR USUARIO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "640684df4c21fe2512a52087",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/productUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"productUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORIA",
+			"item": [
+				{
+					"name": "CREAR CATEGORIA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NTEzMTczLCJleHAiOjE2Nzg1MTY3NzN9.yQAAWYHmM0oi9oDCVRwkWCsuGZaQhWGmCmy0TGwnWhU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Carnes",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "Aqui estaran todas las carnes",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/create-category",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR CATEGORIA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDEyNjk0LCJleHAiOjE2Nzg0MTYyOTR9.VOcWg8_9Y-P9V818s7xJDwXdY_ylJqpjhRjMhwLGzP0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/read-category",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"read-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR POR NOMBRE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDA1MDc4LCJleHAiOjE2Nzg0MDg2Nzh9.bTvJJfgj5MTZWm1iSp44cNbZ2UCQ1MRl1nfU3wCA_3k",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lacteos",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/category-byname",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"category-byname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR CATEGORIAI",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDA2MzEyLCJleHAiOjE2Nzg0MDk5MTJ9.XJ2Unofk97NnYJpd1xBq36IKBpMEdlxu_A0Hhjd-Sos",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Aqui estan las bebidas de todo tipo",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/edit-category/640a72d6f2b301d96c917730",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"edit-category",
+								"640a72d6f2b301d96c917730"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CATEGORIA",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NTEzMzMxLCJleHAiOjE2Nzg1MTY5MzF9._1uRKRiF5m4Fva4rQcE6eat6kvgsT5Odk1M7L1fgTFY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3005/api/delete-category/640c1452caa4ee288064c72b",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"delete-category",
+								"640c1452caa4ee288064c72b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCTO",
+			"item": [
+				{
+					"name": "CREAR PRODUCTO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NTEzMTczLCJleHAiOjE2Nzg1MTY3NzN9.yQAAWYHmM0oi9oDCVRwkWCsuGZaQhWGmCmy0TGwnWhU",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Carne",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "Carne ahumado",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "20.50",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "20",
+									"type": "default"
+								},
+								{
+									"key": "categoryName",
+									"value": "Carnes",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/create-product",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"create-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR POR NOMBRE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4Mzk3OTcxLCJleHAiOjE2Nzg0MDE1NzF9.bawgOk6OMbkrWGN0u-i_N_IWQjwVEG8LWKE_S0v6L3A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Crema",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/list-byname",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"list-byname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTAR PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4Mzk2NjAxLCJleHAiOjE2Nzg0MDAyMDF9.2SOKh7yAGxvvHFFQKSDWt9XpHo_78w5r95MvDgbnqPQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/api/list-products",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"list-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PRODUCTO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDA5ODcyLCJleHAiOjE2Nzg0MTM0NzJ9.EULzBKzHW53eL2y4I3fvi6D2ARhuUCLZVr0TEiSsV9E",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ricitos",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "Deliciosa leche",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "19.50",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/edit-product/64078f504e2a7e413260618b",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"edit-product",
+								"64078f504e2a7e413260618b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR PRODUCTO",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NTEzMzMxLCJleHAiOjE2Nzg1MTY5MzF9._1uRKRiF5m4Fva4rQcE6eat6kvgsT5Odk1M7L1fgTFY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3005/api/delete-product/640c1452caa4ee288064c72b",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"delete-product",
+								"640c1452caa4ee288064c72b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRODUCTOS AGOTADOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDA1MDc4LCJleHAiOjE2Nzg0MDg2Nzh9.bTvJJfgj5MTZWm1iSp44cNbZ2UCQ1MRl1nfU3wCA_3k",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/api/sold-out",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"sold-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FACTURA",
+			"item": [
+				{
+					"name": "PDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDBiZmYzZDMxOGE4YjRiMTU3OTZmOGMiLCJ1c2VybmFtZSI6IkRlbmluICIsImVtYWlsIjoiRGVuaW5AZ21haWwuY29tIiwiaWF0IjoxNjc4NTA4MzU4LCJleHAiOjE2Nzg1MTE5NTh9.eaZ9tFPjYqZA9x31hCsdaMEoBSLuHsLxIA_uPE7fTeE",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "detalleFactura",
+									"value": "640b9ca5590b0a2eccc5eaf2",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/api/generatePDF",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"generatePDF"
+							],
+							"query": [
+								{
+									"key": "x-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1SWQiOiI2NDA2NjFkMjYyYjk5MDJmZTdmOTQwMzgiLCJ1c2VybmFtZSI6IkFuZGVyc3NvbiIsImVtYWlsIjoiYXVycmVhLTIwMTkyODRAa2luYWwuZWR1Lmd0IiwiaWF0IjoxNjc4NDkyNDY4LCJleHAiOjE2Nzg0OTYwNjh9.5grUJeglT8TenLfYvrhnNJWZxWW2TLji3H4XBvQ1Jc8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

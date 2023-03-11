@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const CategorysSchema = Schema({
     name: String, 
     description: String, 
-    productos: [{type: Schema.Types.ObjectId, ref: 'Products'}],
+    products: [{type: Schema.Types.ObjectId, ref: 'Products'}],
 })
 
 module.exports = mongoose.model('Categorys', CategorysSchema);

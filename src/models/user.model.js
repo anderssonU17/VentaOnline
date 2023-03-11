@@ -10,9 +10,15 @@ const UserSchema = Schema({
     password: String, 
     rol: {
         type: String, 
-        enum: ['ADMIN', 'CLIENT'],
-        required: true,
+        enum: ['ADMIN', 'CLIENT'], default: 'CLIENT',
     },
+    carrito: [
+        {
+            nombre: {type: Schema.Types.ObjectId, ref: 'Products'},
+            cantidad: {type: Number},
+            fecha: {type: Date, default: Date.now}
+        }
+    ]
 })
 
 module.exports = mongoose.model('Users', UserSchema);
